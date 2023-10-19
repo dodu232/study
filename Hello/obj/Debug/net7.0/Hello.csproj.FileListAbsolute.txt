@@ -1,0 +1,14 @@
+C:\bo\c#\Hello\bin\Debug\net7.0\Hello.exe
+C:\bo\c#\Hello\bin\Debug\net7.0\Hello.deps.json
+C:\bo\c#\Hello\bin\Debug\net7.0\Hello.runtimeconfig.json
+C:\bo\c#\Hello\bin\Debug\net7.0\Hello.dll
+C:\bo\c#\Hello\bin\Debug\net7.0\Hello.pdb
+C:\bo\c#\Hello\obj\Debug\net7.0\Hello.GeneratedMSBuildEditorConfig.editorconfig
+C:\bo\c#\Hello\obj\Debug\net7.0\Hello.AssemblyInfoInputs.cache
+C:\bo\c#\Hello\obj\Debug\net7.0\Hello.AssemblyInfo.cs
+C:\bo\c#\Hello\obj\Debug\net7.0\Hello.csproj.CoreCompileInputs.cache
+C:\bo\c#\Hello\obj\Debug\net7.0\Hello.dll
+C:\bo\c#\Hello\obj\Debug\net7.0\refint\Hello.dll
+C:\bo\c#\Hello\obj\Debug\net7.0\Hello.pdb
+C:\bo\c#\Hello\obj\Debug\net7.0\Hello.genruntimeconfig.cache
+C:\bo\c#\Hello\obj\Debug\net7.0\ref\Hello.dll
