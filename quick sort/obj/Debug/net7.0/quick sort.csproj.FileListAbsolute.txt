@@ -1,0 +1,14 @@
+C:\bo\c#\quick sort\bin\Debug\net7.0\quick sort.exe
+C:\bo\c#\quick sort\bin\Debug\net7.0\quick sort.deps.json
+C:\bo\c#\quick sort\bin\Debug\net7.0\quick sort.runtimeconfig.json
+C:\bo\c#\quick sort\bin\Debug\net7.0\quick sort.dll
+C:\bo\c#\quick sort\bin\Debug\net7.0\quick sort.pdb
+C:\bo\c#\quick sort\obj\Debug\net7.0\quick sort.GeneratedMSBuildEditorConfig.editorconfig
+C:\bo\c#\quick sort\obj\Debug\net7.0\quick sort.AssemblyInfoInputs.cache
+C:\bo\c#\quick sort\obj\Debug\net7.0\quick sort.AssemblyInfo.cs
+C:\bo\c#\quick sort\obj\Debug\net7.0\quick sort.csproj.CoreCompileInputs.cache
+C:\bo\c#\quick sort\obj\Debug\net7.0\quick sort.dll
+C:\bo\c#\quick sort\obj\Debug\net7.0\refint\quick sort.dll
+C:\bo\c#\quick sort\obj\Debug\net7.0\quick sort.pdb
+C:\bo\c#\quick sort\obj\Debug\net7.0\quick sort.genruntimeconfig.cache
+C:\bo\c#\quick sort\obj\Debug\net7.0\ref\quick sort.dll
