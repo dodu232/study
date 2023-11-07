@@ -1,82 +1,109 @@
 ﻿namespace quickSort
 {
-    class MainApp
+    class QuickSort
     {
-        public static void Main(string[] args)
+        public int[] arr;
+
+        public QuickSort(int n = 20)
         {
-            int[] arr = new int[10];
-
-            rand(arr);
-
-            Console.Write("퀵소트 0: ");
-            print(arr);
-
-            quickSort(arr);
-
-            Console.Write("퀵소트 후: ");
-            print(arr);
-        }
-        public static void quickSort(int[] arr)
-        {
-            int pivot = 0;
-            for (int i = 0; i<arr.Length; i++)
+            arr = new int[n];
+            Random r = new Random();
+            for (int i = 0; i < n; i++)
             {
-                int idx1=0, idx2=0;
-                for (int j = 0; j<arr.Length; j++)
+                this.arr[i] = r.Next(1, 1000);
+            }
+        }
+
+        public void quickSort(int start, int end)
+        {
+            if (start >= end)
+            {
+                return;
+            }
+
+            // 통 정렬
+            int pivot = partition(start, end);
+
+            // 오른쪽 정렬
+            quickSort(start, pivot - 1);
+
+            // 왼쪽 정렬
+            quickSort(pivot + 1, end);
+
+        }
+
+        // 정렬
+        public int partition(int start, int end)
+        {
+            //  피벗 값 지정
+            int pivot = start;
+
+            // 피벗 다음 수 부터 탐색 시작
+            start++;
+
+            // 반복 정렬
+            while (true)
+            {
+                // 큰 수 탐색
+                while (arr[pivot] >= arr[start] && start < end)
                 {
-                    if (arr[pivot] < arr[j])
-                    {
-                        idx1 = j;
-                        break;
-                    }
+                    start++;
                 }
 
-                for (int j = arr.Length - 1; j>0; j--)
+                // 작은 수 탐색
+                while (arr[pivot] < arr[end] && end >= start)
                 {
-                    if (arr[pivot] > arr[j])
-                    {
-                        idx2 = j;
-                        break;
-                    }
+                    end--;
                 }
 
-                if (idx1 + 1 == idx2)
+                // 교차되면 피벗과 작은 값 교환 후 반복문 종료
+                if (start >= end)
                 {
-                    int temp = arr[idx1];
-                    arr[idx1] = arr[pivot];
-                    arr[pivot] = temp;
+                    swap(pivot, end);
+                    return end; // 피봇 리턴
                 }
-                else
+                else // 아니면 큰 값과 작은 값 교환
                 {
-                    int temp = arr[idx1];
-                    arr[idx1] = arr[idx2];
-                    arr[idx2] = temp;
-
+                    swap(start, end);
                 }
-                    Console.Write($"퀵소트 {i+1}: ");
-                    print(arr);
-
             }
 
         }
 
-        public static void print(int[] arr)
+        // 자리 바꾸기
+        public void swap(int a, int b)
         {
-            for (int i = 0; i < arr.Length; i++)
+            int temp = this.arr[a];
+            this.arr[a] = this.arr[b];
+            this.arr[b] = temp;
+        }
+
+        // 배열 출력하기
+        public void print()
+        {
+            for (int i = 0; i < this.arr.Length; i++)
             {
-                Console.Write(arr[i] + " ");
+                Console.Write(this.arr[i] + " ");
             }
             Console.WriteLine();
         }
 
-        public static void rand(int[] arr)
+    }
+    class MainApp
+    {
+        public static void Main(string[] args)
         {
-            Random r = new Random();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                arr[i] = r.Next(10, 30);
-            }
-        }
+            Sort arr = new Sort(1000);
+            arr.print();
+            DateTime time = DateTime.Now;
 
+            arr.quickSort(0, arr.arr.Length - 1);
+
+            arr.print();
+            DateTime time2 = DateTime.Now;
+            TimeSpan timer = time2 - time;
+            Console.WriteLine($"걸린 시간: {timer.TotalMilliseconds}");
+
+        }
     }
 }
