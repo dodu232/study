@@ -1,16 +1,39 @@
 ﻿namespace quickSort
 {
-    class QuickSort
+    class Sort
     {
         public int[] arr;
 
-        public QuickSort(int n = 20)
+        public Sort(int n = 20)
         {
             arr = new int[n];
             Random r = new Random();
             for (int i = 0; i < n; i++)
             {
                 this.arr[i] = r.Next(1, 1000);
+            }
+        }
+
+        public Sort(Sort s)
+        {
+            arr = new int[s.arr.Length];
+            for (int i = 0; i < arr.Length; i++)
+            {
+                this.arr[i] = s.arr[i];
+            }
+        }
+
+        public void bubbleSort()
+        {
+            for(int i=arr.Length-1; i>0; i--)
+            {
+                for(int j=0; j<i; j++)
+                {
+                    if (arr[j] > arr[j + 1])
+                    {
+                        swap(j, j + 1);
+                    }
+                }
             }
         }
 
@@ -93,16 +116,35 @@
     {
         public static void Main(string[] args)
         {
-            Sort arr = new Sort(1000);
-            arr.print();
+            Sort arr = new Sort(10000);
+            Sort arr2 = new Sort(arr);
+
+            Console.WriteLine("퀵소트");
+            //arr.print();
+            //arr2.print();
+
             DateTime time = DateTime.Now;
 
             arr.quickSort(0, arr.arr.Length - 1);
 
             arr.print();
+
             DateTime time2 = DateTime.Now;
             TimeSpan timer = time2 - time;
-            Console.WriteLine($"걸린 시간: {timer.TotalMilliseconds}");
+            Console.WriteLine("버블");
+
+
+            time = DateTime.Now;
+
+            arr2.bubbleSort();
+
+            arr2.print();
+
+            time2 = DateTime.Now;
+            TimeSpan timer2 = time2 - time;
+
+            Console.WriteLine($"퀵소트 걸린 시간: {timer.TotalMilliseconds}");
+            Console.WriteLine($"버블 걸린 시간: {timer2.TotalMilliseconds}");
 
         }
     }
